@@ -1,0 +1,1 @@
+package com.neoaltair.service; public class IziPayService { }

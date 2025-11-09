@@ -1,0 +1,1 @@
+package com.neoaltair.model; public class PaymentRequest { }

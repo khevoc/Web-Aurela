@@ -1,0 +1,1 @@
+package com.neoaltair.controller; public class IziPayController { }
