@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary: #007bff;
+  --accent: #00d4ff;
+  --dark: #050505;
+  --gray: #1b1b1b;
+  --light: #ffffff;
+  --text: #e2e2e2;
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--text);
+  font-family: 'Playfair Display', serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+section {
+  padding: 4rem 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #1c2b1f; /* Verde profundo */
+  background-image: 
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.08) 0px,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 2px,
+      transparent 6px
+    );
+  animation: auroraLines 6s ease-in-out infinite alternate;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 170, 255, 1);
+  }
+}
+
+/* === Animación suave de iluminación vertical === */
+@keyframes auroraLines {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 20px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

@@ -1,0 +1,361 @@
+/* === AURELA Pages Styles === */
+
+/* === PALETA PRINCIPAL ===
+   Beige cálido: #F4EDE4
+   Verde salvia: #8AA78B
+   Dorado tenue: #C9A86A
+   Gris carbón: #2E2E2E
+   Blanco humo: #FAFAFA
+*/
+
+/* Fondo general con sensación natural y artística */
+.page-container {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at top left, #14281d, #0f2015, #1c2b1f);
+  color: #2E2E2E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Títulos principales */
+.page-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #C9A86A;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(201, 168, 106, 0.25);
+}
+
+/* Subtítulos y párrafos */
+.page-text {
+  max-width: 850px;
+  text-align: center;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #2E2E2E;
+  margin-bottom: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* === CONTACT PAGE === */
+
+.contact-page-container {
+  margin-top: 2rem;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top left, #14281d, #0f2015, #1c2b1f);
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+.contact-card {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  width: 100%;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(138, 167, 139, 0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(138, 167, 139, 0.2);
+  animation: fadeIn 1.2s ease;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #C9A86A;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Formulario */
+.contact-form label {
+  display: block;
+  color: #2E2E2E;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: rgba(250, 250, 250, 0.8);
+  border: 1px solid rgba(138, 167, 139, 0.4);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: #2E2E2E;
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #8AA78B;
+  box-shadow: 0 0 10px rgba(138, 167, 139, 0.4);
+  outline: none;
+}
+
+/* Botón de envío */
+.send-button {
+  width: 100%;
+  background: linear-gradient(90deg, #8AA78B, #C9A86A);
+  border: none;
+  color: #FAFAFA;
+  font-weight: 600;
+  padding: 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.send-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(201, 168, 106, 0.4);
+}
+
+/* Info de contacto */
+.contact-info {
+  text-align: center;
+  margin-top: 2rem;
+  color: #2E2E2E;
+}
+
+.contact-info a {
+  color: #8AA78B;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Info block */
+.contact-info {
+  margin-top: 2.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(138, 167, 139, 0.3);
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 0 25px rgba(138, 167, 139, 0.15);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+}
+
+.contact-info:hover {
+  box-shadow: 0 0 35px rgba(201, 168, 106, 0.25);
+  transform: translateY(-3px);
+}
+
+.contact-subtitle {
+  font-size: 1.1rem;
+  color: #C9A86A;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Ítems de contacto */
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+.info-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;  
+}
+
+.info-icon {
+  color: #8AA78B;
+  transition: all 0.3s ease;
+  margin: 0.5rem;
+}
+
+.info-item:hover .info-icon {
+  transform: scale(1.15);
+  background: rgba(138, 167, 139, 0.2);
+  border-radius: 50%;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: #7a7a7a;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.4px;
+}
+
+.info-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2e2e2e;
+  font-family: "Montserrat", sans-serif;
+}
+
+.info-item:hover .info-value {
+  color: #C9A86A;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === ABOUT PAGE === */
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: linear-gradient(to bottom, #FAFAFA, #F4EDE4);
+  color: #2E2E2E;
+}
+
+/* HERO SECTION */
+.about-hero {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  background: radial-gradient(circle at 30% 50%, #EAE3D9, #F4EDE4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(138, 167, 139, 0.15), rgba(201, 168, 106, 0.1));
+  z-index: 1;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #2E2E2E;
+}
+
+.about-hero-content .page-title {
+  font-size: 3rem;
+  color: #C9A86A;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: #8AA78B;
+  margin-top: 0.5rem;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* MAIN CONTENT */
+.about-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  animation: fadeIn 1.2s ease;
+}
+
+.about-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Grid de valores */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(138, 167, 139, 0.3);
+  border-radius: 18px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(138, 167, 139, 0.1);
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 168, 106, 0.6);
+  box-shadow: 0 0 20px rgba(201, 168, 106, 0.3);
+}
+
+.about-card .icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  color: #8AA78B;
+}
+
+.about-card h3 {
+  color: #2E2E2E;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.about-card p {
+  color: #2E2E2E;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Footer */
+.about-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(138, 167, 139, 0.3);
+}
+
+.about-footer h4 {
+  font-size: 1.1rem;
+  color: #8AA78B;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-title { font-size: 2.2rem; }
+  .page-text { font-size: 1rem; padding: 0 1rem; }
+  .contact-form { padding: 1.5rem; }
+  .about-card { padding: 1.5rem; }
+}
+/* === ANIMACIONES GLOBALES === */
+@keyframes fadeIn { 
+  from { opacity: 0; transform: translateY(20px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}

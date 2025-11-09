@@ -1,0 +1,148 @@
+/* === LUXURY RESTAURANT HERO === */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0a0908;
+  font-family: "Playfair Display", serif;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.75) contrast(1.05);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15, 10, 5, 0.3), rgba(0, 0, 0, 0.8));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-text {
+  color: #f8f6f1;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #d4af37, #f5deb3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: #e4dccc;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 2.2rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn:hover {
+  background: linear-gradient(90deg, #d4af37, #f5deb3);
+  color: #0a0908;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+/* === Controls === */
+.hero-controls {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 50;
+}
+
+.nav-btn {
+  background: rgba(30, 20, 10, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #d4af37;
+  border-radius: 50%;
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+.nav-btn:hover {
+  background: #d4af37;
+  color: #0a0908;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+  transform: scale(1.1);
+}
+
+.dots {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+}
+
+.dot.active {
+  background: #d4af37;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+  transform: scale(1.2);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-btn {
+    padding: 0.7rem 1.6rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-controls {
+    bottom: 1.5rem;
+    gap: 1rem;
+  }
+
+  .nav-btn {
+    padding: 0.4rem;
+  }
+}

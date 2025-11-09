@@ -1,0 +1,85 @@
+categoria|nombre|descripcion|precio|imagen
+Bebidas Calientes|Café Americano|Café negro filtrado de tueste medio.|9|/images/americano.jpg
+Bebidas Calientes|Capuccino|Espresso con leche vaporizada y espuma cremosa.|12|/images/capuccino.jpg
+Bebidas Calientes|Latte|Café espresso con leche vaporizada y una fina capa de espuma.|11.5|/images/latte.jpg
+Bebidas Calientes|Moka|Espresso con chocolate, leche y crema batida.|13|/images/moka.jpg
+Bebidas Calientes|Té Verde|Té natural de hojas seleccionadas.|8|/images/teverde.jpg
+Bebidas Calientes|Chocolate Caliente|Bebida de cacao artesanal con leche entera.|10.5|/images/chocolate.jpg
+Bebidas Calientes|Macchiato|Espresso con un toque de espuma de leche.|10|/images/macchiato.jpg
+Bebidas Calientes|Flat White|Café suave con textura cremosa.|11|/images/flatwhite.jpg
+Bebidas Calientes|Té Chai|Mezcla de té negro con especias exóticas y leche.|12|/images/chaitea.jpg
+Bebidas Calientes|Espresso Doble|Café concentrado para los verdaderos amantes del espresso.|9.5|/images/espresso.jpg
+
+Bebidas Frías|Frappe de Vainilla|Batido frío con esencia de vainilla y crema.|10.5|/images/frappevainilla.jpg
+Bebidas Frías|Iced Latte|Espresso con leche y hielo.|11|/images/icedlatte.jpg
+Bebidas Frías|Cold Brew|Café infusionado en frío durante 12 horas.|10|/images/coldbrew.jpg
+Bebidas Frías|Frappe de Mocha|Batido con café, chocolate y hielo.|11.5|/images/frappemocha.jpg
+Bebidas Frías|Smoothie de Fresa|Bebida refrescante con fresas naturales.|12|/images/smoothie-fresa.jpg
+Bebidas Frías|Smoothie Tropical|Mango, piña y maracuyá natural.|12|/images/smoothie-tropical.jpg
+Bebidas Frías|Iced Americano|Café americano servido con hielo.|9|/images/icedamericano.jpg
+Bebidas Frías|Limonada de Menta|Refrescante mezcla de limón y hojas de menta.|8.5|/images/limonadamenta.jpg
+Bebidas Frías|Frappe de Caramelo|Batido frío con salsa de caramelo y crema.|11.5|/images/frappecaramelo.jpg
+Bebidas Frías|Iced Matcha Latte|Matcha japonés con leche y hielo.|13|/images/icedmatcha.jpg
+
+Sandwiches|Panini de Pollo|Pan tostado con pechuga de pollo y pesto.|15.5|/images/paninipollo.jpg
+Sandwiches|Panini Vegetariano|Con pimientos asados, berenjena y queso.|14|/images/paninivegetariano.jpg
+Sandwiches|Sándwich Club|Tres pisos de jamón, queso, huevo y lechuga.|16|/images/club.jpg
+Sandwiches|Bagel de Salmón|Bagel artesanal con salmón ahumado y queso crema.|17.5|/images/bagel.jpg
+Sandwiches|Sándwich de Jamón y Queso|Clásico con pan dorado y fundido perfecto.|13|/images/jamonqueso.jpg
+Sandwiches|Wrap de Pollo|Con lechuga, tomate y salsa césar.|14|/images/wrappollo.jpg
+Sandwiches|Panini Caprese|Con mozzarella, tomate y albahaca fresca.|13.5|/images/paninicaprese.jpg
+
+Postres|Tarta de Queso|Tarta cremosa con base de galleta.|15|/images/tartaqueso.jpg
+Postres|Brownie de Chocolate|Con trozos de nuez y baño de cacao.|10|/images/brownie.jpg
+Postres|Galletas Artesanales|Variedad de sabores caseros.|7.5|/images/galletas.jpg
+Postres|Mousse de Maracuyá|Postre suave con toque ácido y cremoso.|9|/images/mousse.jpg
+Postres|Tiramisú|Clásico italiano con café y mascarpone.|14|/images/tiramisu.jpg
+Postres|Cupcake Red Velvet|Bizcocho rojo con cobertura de queso crema.|8|/images/redvelvet.jpg
+Postres|Tarta de Manzana|Con crumble de canela y caramelo.|13.5|/images/tartamanzana.jpg
+
+Ensaladas|Ensalada Mediterránea|Tomates cherry, aceitunas y queso feta.|16|/images/ensalada1.jpg
+Ensaladas|Ensalada Caesar|Con pollo a la parrilla y crutones.|15|/images/caesar.jpg
+Ensaladas|Ensalada Verde|Con palta, espinaca y vinagreta.|14|/images/verde.jpg
+Ensaladas|Ensalada de Quinoa|Con verduras frescas y limón.|15.5|/images/quinoa.jpg
+Ensaladas|Ensalada de Frutas|Fresca mezcla de frutas tropicales.|12.5|/images/frutas.jpg
+Ensaladas|Ensalada Caprese|Con mozzarella, tomate y albahaca.|14|/images/caprese.jpg
+Ensaladas|Ensalada de Pollo|Con pollo grillado y aderezo mostaza-miel.|15|/images/ensaladalight.jpg
+
+Desayunos|Tostadas con Palta|Pan artesanal con palta fresca y limón.|15|/images/palta.jpg
+Desayunos|Bowl de Yogurt|Yogurt natural con frutas frescas y granola.|13|/images/yogurt.jpg
+Desayunos|Panqueques con Miel|Panqueques esponjosos con miel artesanal.|14|/images/panqueques.jpg
+Desayunos|Omelette de Queso|Huevos frescos con queso fundido.|13|/images/omelette.jpg
+Desayunos|Croissant de Mantequilla|Recién horneado, crujiente y suave.|8|/images/croissant.jpg
+Desayunos|Waffles con Frutas|Con fresas, kiwi y sirope natural.|15.5|/images/waffles.jpg
+Desayunos|Tazón Energético|Avena, plátano, nueces y miel.|12|/images/energia.jpg
+
+Snacks|Chips de Papa|Crujientes y ligeramente saladas.|6|/images/chips.jpg
+Snacks|Empanadas Artesanales|Rellenas de carne o queso.|9|/images/empanadas.jpg
+Snacks|Palitos de Queso|Crujientes por fuera y suaves por dentro.|8|/images/palitos.jpg
+Snacks|Nachos con Queso|Con salsa cheddar derretida.|10|/images/nachos.jpg
+Snacks|Mix de Frutos Secos|Almendras, nueces y pasas.|8.5|/images/frutos.jpg
+Snacks|Mini Croissants|Rellenos de crema o chocolate.|9|/images/minicroissant.jpg
+
+Jugos Naturales|Jugo de Naranja|Natural recién exprimido.|9|/images/naranja.jpg
+Jugos Naturales|Jugo de Zanahoria y Naranja|Rico en vitaminas y antioxidantes.|9.5|/images/zanahoria.jpg
+Jugos Naturales|Jugo Verde|Con espinaca, manzana y jengibre.|10|/images/jugoverde.jpg
+Jugos Naturales|Jugo de Mango|Refrescante y tropical.|9.5|/images/mango.jpg
+Jugos Naturales|Jugo de Fresa|Dulce y natural.|9|/images/fresa.jpg
+Jugos Naturales|Jugo de Piña|Fresco y sin azúcar añadida.|9|/images/pina.jpg
+Jugos Naturales|Jugo de Arándano|Ácido y antioxidante.|10.5|/images/arandano.jpg
+
+Helados|Helado de Vainilla|Clásico sabor cremoso.|7.5|/images/helado-vainilla.jpg
+Helados|Helado de Chocolate|Sabor intenso y textura suave.|8|/images/helado-chocolate.jpg
+Helados|Helado de Fresa|Elaborado con fresas naturales.|8|/images/helado-fresa.jpg
+Helados|Helado de Lúcuma|Sabor tradicional peruano.|9|/images/helado-lucuma.jpg
+Helados|Helado de Menta|Refrescante con trozos de chocolate.|8.5|/images/helado-menta.jpg
+Helados|Helado de Café|Con sabor a espresso artesanal.|9|/images/helado-cafe.jpg
+Helados|Helado de Maracuyá|Ácido y dulce a la vez.|8.5|/images/helado-maracuya.jpg
+
+Cafés Especiales|Café Peruano|Origen Cusco con notas de cacao.|13|/images/cafeperuano.jpg
+Cafés Especiales|Café Colombiano|Tueste medio con aroma floral.|13.5|/images/cafecolombiano.jpg
+Cafés Especiales|Café Etíope|Aromas frutales con acidez brillante.|14|/images/cafeetiope.jpg
+Cafés Especiales|Café Brasileño|Dulce, balanceado y con cuerpo.|12.5|/images/cafebrasil.jpg
+Cafés Especiales|Café de la Casa|Selección exclusiva del barista.|12|/images/casahouse.jpg
+Cafés Especiales|Café Orgánico|Libre de pesticidas y cultivado sosteniblemente.|14.5|/images/cafeorganico.jpg
+Cafés Especiales|Café Descafeinado|Sabor completo sin cafeína.|11.5|/images/descafeinado.jpg

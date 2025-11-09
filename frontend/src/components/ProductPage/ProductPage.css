@@ -1,0 +1,365 @@
+/* ============================================================
+   🌿 Aurela Product Page — Natural Luxe Edition (Fixed)
+   ============================================================ */
+
+.product-section {
+  padding: 5rem 1.5rem 3rem;
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Playfair Display", "Inter", serif;
+  background: linear-gradient(circle at top left, #14281d, #0f2015, #1c2b1f);
+  color: #2f2f2f;
+  min-height: 100vh;
+  position: relative;
+  overflow: visible;
+}
+
+/* === Fondo limpio y natural sin animación === */
+.product-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #f8f6f0 0%, #f1efe7 100%);
+  opacity: 0.9;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* === Título === */
+.product-title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: #a37f2c; /* Dorado tenue */
+  letter-spacing: 0.05em;
+  margin-bottom: 2.5rem;
+  margin-top: 3.5rem; /* ✅ Espacio adicional */
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 15px rgba(163, 127, 44, 0.25);
+}
+
+/* === Barra de filtros === */
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 16px;
+  padding: 1.2rem 1.6rem;
+  margin-bottom: 2.5rem;
+  border: 1px solid rgba(163, 127, 44, 0.25);
+  box-shadow: 0 0 25px rgba(163, 127, 44, 0.1);
+  backdrop-filter: blur(8px);
+  z-index: 5;
+  position: relative;
+}
+
+/* === Buscador === */
+.search-box {
+  position: relative;
+  flex: 1;
+  max-width: 440px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 2.3rem 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(163, 127, 44, 0.3);
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  color: #3d3d3d;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.search-input:focus {
+  border-color: #a37f2c;
+  box-shadow: 0 0 12px rgba(163, 127, 44, 0.35);
+  background: #fffdf8;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #7c7c7c;
+  font-size: 1.1rem;
+  transition: color 0.25s ease;
+}
+
+.clear-btn:hover {
+  color: #a37f2c;
+}
+
+/* === Dropdowns === */
+.dropdown-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: #f8f6f0;
+  border: 1px solid rgba(163, 127, 44, 0.3);
+  color: #5c5331;
+  border-radius: 10px;
+  padding: 0.65rem 1.2rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(163, 127, 44, 0.08);
+  min-width: 120px;
+}
+
+.dropdown-btn:hover {
+  color: #a37f2c;
+  border-color: #a37f2c;
+  background: #fffaf2;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fffdf8;
+  border-radius: 10px;
+  border: 1px solid rgba(163, 127, 44, 0.25);
+  box-shadow: 0 6px 15px rgba(163, 127, 44, 0.2);
+  animation: fadeIn 0.25s ease forwards;
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 50;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #3d3d3d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(163, 127, 44, 0.1);
+  color: #a37f2c;
+}
+
+.dropdown-item.active {
+  background: #a37f2c;
+  color: #fffaf2;
+}
+
+/* === Grilla de productos === */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+.product-card {
+  background: #fffdf8;
+  border-radius: 16px;
+  border: 1px solid rgba(163, 127, 44, 0.2);
+  padding: 1.2rem;
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 0 18px rgba(163, 127, 44, 0.12);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(163, 127, 44, 0.45);
+  box-shadow: 0 6px 25px rgba(163, 127, 44, 0.25);
+}
+
+.img-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.1) saturate(1.1);
+}
+
+/* === Información del producto === */
+.product-card h3 {
+  margin: 1rem 0 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #5b6439;
+}
+
+.category {
+  color: #86867a;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #64625c;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;       /* ✅ Limita a 2 líneas visibles */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: calc(1.4em * 2); /* ✅ Reserva el espacio de 2 líneas */
+}
+
+.price {
+  font-weight: 700;
+  color: #a37f2c;
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+/* === Botón de agregar === */
+.product-card button {
+  background: linear-gradient(135deg, #a37f2c, #b8994a);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.product-card button:hover {
+  background: linear-gradient(135deg, #b8994a, #a37f2c);
+  box-shadow: 0 0 12px rgba(163, 127, 44, 0.35);
+  transform: scale(1.05);
+}
+
+.product-card button.added {
+  background: linear-gradient(135deg, #648b5b, #8ebf7b);
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(120, 160, 100, 0.45);
+}
+
+/* === Paginación (corregida) === */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 3rem;
+  padding-bottom: 3rem; /* ✅ Evita que se oculte */
+  font-size: 1rem;
+  color: #777;
+  position: relative;
+  z-index: 10;
+}
+
+.pagination button {
+  background: #faf8f3;
+  border: 1px solid rgba(163, 127, 44, 0.3);
+  color: #5b4f28;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #fff9f0;
+  box-shadow: 0 0 10px rgba(163, 127, 44, 0.25);
+  transform: translateY(-2px);
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* === Animación fade === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .filters-bar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* 📱 Dos columnas en móviles */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  /* 🔹 Ajuste visual de las tarjetas */
+  .product-card {
+    max-width: 100%;
+    padding: 0.9rem;
+    border-radius: 12px;
+  }
+
+  .product-card img {
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 0.95rem;
+    margin-top: 0.7rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    min-height: calc(1.3em * 2);
+    display: -webkit-box;
+  }
+
+  .price {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .product-card button {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+  }
+}
+

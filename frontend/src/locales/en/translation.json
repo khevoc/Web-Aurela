@@ -1,0 +1,133 @@
+{
+  "hero": {
+    "title": "Welcome to Neo Altair",
+    "subtitle": "Discover the future of digital assets",
+    "shopNow": "Shop Now",
+    "exploreCollection": "Explore Now"
+  },
+  "product": {
+    "title": "Collection",
+    "sortBy": "Sort by Price",
+    "searchPlaceholder": "Search product...",
+    "clearSearch": "Clear search",
+    "sortLowHigh": "Lowest to Highest",
+    "sortHighLow": "Highest to Lowest",
+    "noResults": "No products found.",
+    "addToCart": "Add to Cart",
+    "prev": "Prev",
+    "next": "Next",
+    "page": "Page",
+    "of": "of"
+  },
+
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "collection": "Collection",
+    "contact": "Contact",
+    "cart": "Cart",
+    "checkout": "Checkout"
+  },
+
+  "about": {
+    "title": "About Neo Altair",
+    "tagline":"Turning imagination into form.",
+    "intro": "At <1>Neo Altair</1>, we blend <3>technology, innovation, and vision</3> to redefine the digital investment experience. We are a platform that unites the world of <5>blockchain</5> with modern design and next-generation security.",
+    "mission": "Our mission is to build an ecosystem where <1>digital assets</1> and <3>luxury-grade tokens</3> merge seamlessly into everyday life. Every detail of Neo Altair is crafted to deliver <5>transparency, control, and elegance</5> to our users.",
+    "securityTitle": "Security",
+    "securityText": "We implement advanced cryptographic standards to ensure every transaction remains fully protected.",
+    "innovationTitle": "Innovation",
+    "innovationText": "Each Neo Altair product merges art and technology, designed with a forward-thinking vision.",
+    "connectivityTitle": "Connectivity",
+    "connectivityText": "A global network engineered to deliver fast, stable, and reliable access from anywhere in the world.",
+    "footer": "Neo Altair — Where the future takes form."
+  },
+
+  "contact": {
+    "title": "Contact Us",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "you@example.com",
+    "messagePlaceholder": "Write your message here...",
+    "sendButton": "Send message",
+    "sendingButton": "Sending...",
+    "successMessage": "✅ Your message has been sent successfully.",
+    "errorAlert": "❌ Error sending message. Please try again.",
+
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email format",
+      "messageRequired": "Please write your message"
+    },
+
+    "info": {
+      "emailTitle": "Contact email",
+      "emailValue": "leo@gmail.com",
+      "phoneTitle": "Phone",
+      "phoneValue": "+51 987 654 321",
+      "subtitle": "You can also contact us directly through the following channels:"
+    }
+  },
+
+  "collection": {
+    "title": "Collection",
+    "searchPlaceholder": "Search product...",
+    "clearSearch": "Clear search",
+    "filters": "Filters",
+    "allCategories": "All categories",
+    "art": "Art",
+    "nft": "NFT",
+    "digital": "Digital",
+    "physical": "Physical",
+    "sortBy": "Sort by",
+    "priceAsc": "Price: Low to High",
+    "priceDesc": "Price: High to Low",
+    "maxPrice": "Max price",
+    "addToCart": "Add to cart",
+    "page": "Page",
+    "of": "of"
+  },
+
+  "cart" : {
+    "title": "Shopping Cart",
+    "product": "Product",
+    "price": "Price",
+    "quantity": "Quantity",
+    "total": "Total",
+    "emptyCart": "Your cart is empty.",
+    "continueShopping": "Continue Shopping",
+    "checkout": "Proceed to Checkout",
+    "remove": "Remove",
+    "update": "Update Cart",
+    "cartUpdated": "Cart updated successfully.",
+    "itemAdded": "Item added to cart.",
+    "itemRemoved": "Item removed from cart.",
+    "clearCart": "Clear Cart",
+    "empty": "Your cart is empty.",
+    "browseCollection": "Browse Collection",
+    "proceedToCheckout": "Proceed to Checkout"
+  },
+
+  "checkout": {
+    "title": "Checkout",
+    "customerInformation": "Customer Information",
+    "fullName": "Full Name",
+    "email": "Email",
+    "shippingAddress": "Shipping Address",
+    "orderSummary": "Order Summary",
+    "total": "Total",
+    "payNow": "Pay Now",
+    "viewDetails": "View Details",
+    "hideDetails": "Hide Details"
+  },
+  
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+
+}

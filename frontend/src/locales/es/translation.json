@@ -1,0 +1,112 @@
+{
+  "hero": {
+    "title": "Bienvenido a Neo Altair",
+    "subtitle": "Descubre el futuro de los activos digitales",
+    "shopNow": "Comprar ahora",
+    "exploreCollection": "Explorar ahora"
+  },
+  
+  "product": {
+    "title": "Colección",
+    "sortBy": "Ordenar por precio",
+    "searchPlaceholder": "Buscar producto...",
+    "clearSearch": "Borrar búsqueda",
+    "sortLowHigh": "De menor a mayor",
+    "sortHighLow": "De mayor a menor",
+    "addToCart": "Agregar al carrito",
+    "noResults": "No se encontraron productos.",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "page": "Página",
+    "of": "de"
+  },
+
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "collection": "Colección",
+    "contact": "Contacto",
+    "cart": "Carrito",
+    "checkout": "Pagar"
+  },
+
+  "about": {
+    "title": "Sobre Neo Altair",
+    "tagline": "Transformando la imaginación en forma.",
+    "intro": "En <1>Neo Altair</1>, combinamos <3>tecnología, innovación y visión</3> para redefinir la experiencia de inversión digital. Somos una plataforma que une el mundo del <5>blockchain</5> con el diseño moderno y la seguridad de próxima generación.",
+    "mission": "Nuestra misión es construir un ecosistema donde los <1>activos digitales</1> y los <3>tokens de lujo</3> se integren perfectamente en la vida cotidiana. Cada detalle de Neo Altair está diseñado para ofrecer <5>transparencia, control y elegancia</5> a nuestros usuarios.",
+    "securityTitle": "Seguridad",
+    "securityText": "Implementamos estándares criptográficos avanzados para garantizar que cada transacción permanezca completamente protegida.",
+    "innovationTitle": "Innovación",
+    "innovationText": "Cada producto de Neo Altair fusiona arte y tecnología, diseñado con una visión futurista.",
+    "connectivityTitle": "Conectividad",
+    "connectivityText": "Una red global diseñada para ofrecer acceso rápido, estable y confiable desde cualquier parte del mundo.",
+    "footer": "Neo Altair — Donde el futuro toma forma."
+  },
+
+  "contact": {
+    "title": "Contáctanos",
+    "nameLabel": "Nombre",
+    "emailLabel": "Correo electrónico",
+    "messageLabel": "Mensaje",
+    "namePlaceholder": "Tu nombre",
+    "emailPlaceholder": "tu@correo.com",
+    "messagePlaceholder": "Escribe tu mensaje aquí...",
+    "sendButton": "Enviar mensaje",
+    "sendingButton": "Enviando...",
+    "successMessage": "✅ Tu mensaje fue enviado correctamente.",
+    "errorAlert": "❌ Error al enviar. Intenta nuevamente.",
+
+    "validation": {
+      "nameRequired": "El nombre es obligatorio",
+      "emailRequired": "El correo electrónico es obligatorio",
+      "emailInvalid": "El formato del correo no es válido",
+      "messageRequired": "Por favor escribe tu mensaje"
+    },
+
+    "info": {
+      "emailTitle": "Correo de contacto",
+      "emailValue": "leo@gmail.com",
+      "phoneTitle": "Teléfono",
+      "phoneValue": "+51 987 654 321",
+      "subtitle": "También puedes contactarnos directamente a través de los siguientes medios:"
+    }
+  },
+
+  "cart": {
+    "title": "Tu Carrito",
+    "emptyMessage": "Tu carrito está vacío.",
+    "total": "Total",
+    "checkout": "Pagar",
+    "remove": "Eliminar",
+    "update": "Actualizar Carrito",
+    "cartUpdated": "Carrito actualizado correctamente.",
+    "itemAdded": "Artículo agregado al carrito.",
+    "itemRemoved": "Artículo eliminado del carrito.",
+    "clearCart": "Vaciar Carrito",
+    "empty": "Tu carrito está vacío.",
+    "continueShopping": "Continuar Comprando",
+    "proceedToCheckout": "Proceder al Pago",
+    "browseCollection": "Explorar Colección"
+
+  },
+
+  "checkout": {
+    "title": "Pagar",
+    "customerInformation": "Información del Cliente",
+    "fullName": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "shippingAddress": "Dirección de Envío",
+    "orderSummary": "Resumen del Pedido",
+    "total": "Total",
+    "payNow": "Pagar Ahora",
+    "viewDetails": "Ver Detalles",
+    "hideDetails": "Ocultar Detalles"
+  },
+
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  }
+}
