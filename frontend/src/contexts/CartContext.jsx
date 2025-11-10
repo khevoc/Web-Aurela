@@ -5,12 +5,12 @@ export const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  // ✅ Generar clave única para identificar productos idénticos
+  // Generar clave única para identificar productos idénticos
   const getItemKey = (item) => {
     return `${item.id}-${item.name}-${item.price}-${item.image}`;
   };
 
-  // ✅ Agregar producto (si ya existe, aumenta cantidad)
+  // Agregar producto (si ya existe, aumenta cantidad)
   const addToCart = (product) => {
     const key = getItemKey(product);
     setCart((prev) => {
@@ -25,7 +25,7 @@ export function CartProvider({ children }) {
     });
   };
 
-  // ✅ Actualizar cantidad de producto específico
+  // Actualizar cantidad de producto específico
   const updateQuantity = (product, newQty) => {
     const key = getItemKey(product);
     setCart((prev) =>
@@ -37,16 +37,16 @@ export function CartProvider({ children }) {
     );
   };
 
-  // ✅ Remover completamente un producto (todas sus unidades)
+  // Remover completamente un producto (todas sus unidades)
   const removeFromCart = (product) => {
     const key = getItemKey(product);
     setCart((prev) => prev.filter((p) => getItemKey(p) !== key));
   };
 
-  // ✅ Vaciar carrito
+  // Vaciar carrito
   const clearCart = () => setCart([]);
 
-  // ✅ Calcular total con cantidades
+  // Calcular total con cantidades
   const total = useMemo(
     () =>
       cart.reduce(
@@ -56,7 +56,7 @@ export function CartProvider({ children }) {
     [cart]
   );
 
-  // ✅ Calcular número total de ítems
+  // Calcular número total de ítems
   const itemCount = useMemo(
     () => cart.reduce((count, item) => count + (item.quantity || 1), 0),
     [cart]
