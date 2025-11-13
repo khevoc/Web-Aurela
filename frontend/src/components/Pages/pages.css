@@ -28,11 +28,11 @@
   font-size: 2.8rem;
   font-weight: 700;
   font-family: 'Playfair Display', serif;
-  color: #C9A86A;
+  color: #66501c;
   margin-bottom: 1.5rem;
   text-align: center;
   letter-spacing: 1px;
-  text-shadow: 0 0 12px rgba(201, 168, 106, 0.25);
+  text-shadow: 0 0 12px rgba(163, 127, 44, 0.25);
 }
 
 /* Subtítulos y párrafos */
@@ -77,7 +77,7 @@
 .contact-title {
   text-align: center;
   font-size: 2.4rem;
-  color: #C9A86A;
+  color: #a08655;
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -168,7 +168,7 @@
 
 .contact-subtitle {
   font-size: 1.1rem;
-  color: #C9A86A;
+  color: #b79a62;
   font-weight: 600;
   margin-bottom: 1.5rem;
   font-family: 'Playfair Display', serif;
@@ -232,127 +232,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === ABOUT PAGE === */
-
-.about-page {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background: linear-gradient(to bottom, #FAFAFA, #F4EDE4);
-  color: #2E2E2E;
-}
-
-/* HERO SECTION */
-.about-hero {
-  position: relative;
-  width: 100%;
-  height: 45vh;
-  background: radial-gradient(circle at 30% 50%, #EAE3D9, #F4EDE4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.about-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, rgba(138, 167, 139, 0.15), rgba(201, 168, 106, 0.1));
-  z-index: 1;
-}
-
-.about-hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: #2E2E2E;
-}
-
-.about-hero-content .page-title {
-  font-size: 3rem;
-  color: #C9A86A;
-}
-
-.page-subtitle {
-  font-size: 1.2rem;
-  color: #8AA78B;
-  margin-top: 0.5rem;
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* MAIN CONTENT */
-.about-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  animation: fadeIn 1.2s ease;
-}
-
-.about-intro {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-/* Grid de valores */
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.about-card {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(138, 167, 139, 0.3);
-  border-radius: 18px;
-  padding: 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(138, 167, 139, 0.1);
-}
-
-.about-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(201, 168, 106, 0.6);
-  box-shadow: 0 0 20px rgba(201, 168, 106, 0.3);
-}
-
-.about-card .icon {
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
-  color: #8AA78B;
-}
-
-.about-card h3 {
-  color: #2E2E2E;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-  font-family: 'Playfair Display', serif;
-}
-
-.about-card p {
-  color: #2E2E2E;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Footer */
-.about-footer {
-  text-align: center;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(138, 167, 139, 0.3);
-}
-
-.about-footer h4 {
-  font-size: 1.1rem;
-  color: #8AA78B;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  font-family: 'Montserrat', sans-serif;
-}
 
 /* Responsive */
 @media (max-width: 768px) {

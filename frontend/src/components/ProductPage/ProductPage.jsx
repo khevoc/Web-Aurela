@@ -230,9 +230,9 @@ export default function ProductPage() {
             <h3>{product.name}</h3>
             <p className="category">{product.category}</p>
             <p className="description">{product.description}</p>
-            <p className="price">${product.price.toFixed(2)}</p>
+            <p className="price">S/ {product.price.toFixed(2)}</p>
             <button onClick={(e) => handleAddToCart(product, e)}>
-              {t("product.addToCart")}
+              Añadir al carrito
             </button>
           </div>
         ))}

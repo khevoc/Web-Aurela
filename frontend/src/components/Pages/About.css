@@ -11,11 +11,20 @@
 /* === HERO === */
 .about-hero {
   position: relative;
-  height: auto;
+  height: 45vh;
+  width: 100%;
     padding: 0rem 0rem 4rem 0rem;
   display: flex;
   justify-content: center;
   align-items: center;
+   background: 
+    linear-gradient(
+      rgba(244, 237, 228, 0.793),   
+      rgba(244, 237, 228, 0.693)
+    ),
+    url("../../assets/hero-4.png"); 
+  background-size: cover;
+  background-position: center;
 }
 
 .about-hero .overlay {
@@ -36,7 +45,7 @@
   letter-spacing: 3px;
   margin-bottom: 0.5rem;
   position: relative;
-  background: linear-gradient(90deg, #bfa66a, #e8d19a, #bfa66a);
+  background: linear-gradient(90deg, #dbbe7a, #e8d19a, #bfa66a);
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -58,7 +67,7 @@
 .page-subtitle {
   font-family: "Inter", sans-serif;
   font-size: 1.2rem;
-  color: #e8dfc7;
+  color: rgba(14, 23, 17, 0.45);
   letter-spacing: 1px;
 }
 

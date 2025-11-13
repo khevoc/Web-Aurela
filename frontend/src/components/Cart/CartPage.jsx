@@ -111,10 +111,10 @@ export default function CartPage() {
               </h2>
               <div className="cart-actions">
                 <button onClick={clearCart} className="btn-clear">
-                  {t("cart.clearCart")}
+                  Limpiar Carrito
                 </button>
                 <Link to="/checkout" className="btn-checkout">
-                  {t("cart.proceedToCheckout")}
+                  Proceder al Pago
                 </Link>
               </div>
             </div>
