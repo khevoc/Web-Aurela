@@ -20,7 +20,7 @@ export default function MaintenanceModal({ onClose }) {
           <img
             src="/maintenance.gif"
             alt="Maintenance animation"
-            className="maintenance-gif"
+            className="maintenance-gif culinary-image"
           />
 
           <div className="circle-text">

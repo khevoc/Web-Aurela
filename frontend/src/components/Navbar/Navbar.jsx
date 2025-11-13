@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext.jsx";
 import { useTranslation } from "react-i18next";
@@ -8,8 +8,19 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const toggleMenu = () => setMenuOpen((prev) => !prev);
-  const { cart } = useCart();
+  const { cart, totalItems } = useCart();
   const { t } = useTranslation();
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +42,7 @@ export default function Navbar() {
         <span className="bar"></span>
       </button>
 
-      <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
+      <nav ref={menuRef} className={`nav-links ${menuOpen ? "open" : ""}`}>
         <NavLink to="/" onClick={() => setMenuOpen(false)} className={({isActive}) => isActive ? "active" : ""}> Inicio </NavLink>
         <NavLink to="/product" onClick={() => setMenuOpen(false)} className={({isActive}) => isActive ? "active" : ""}> Carta </NavLink>
         <NavLink to="/about" onClick={() => setMenuOpen(false)} className={({isActive}) => isActive ? "active" : ""}> Sobre Nosotros</NavLink>
@@ -42,8 +53,8 @@ export default function Navbar() {
       <div className="nav-actions">
         <NavLink to="/cart" className="btn-cart">
           🛒
-          {cart.length > 0 && (
-            <span className="cart-count">{cart.length}</span>
+          {totalItems > 0 && (
+            <span className="cart-count">{totalItems}</span>
           )}
         </NavLink>
         <NavLink to="/checkout" className="btn-primary">{t("navbar.checkout")}</NavLink>

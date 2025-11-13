@@ -8,13 +8,15 @@ import CartPage from "./components/Cart/CartPage.jsx";
 import CheckoutPage from "./components/Cart/CheckoutPage.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 
 export default function App() {
   return (
     <>
+      <ScrollToTop /> 
       <Navbar />
-      <Routes>
+      <Routes>        
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<ProductPage />} />
         <Route path="/about" element={<AboutPage />} />
