@@ -31,22 +31,6 @@ export default function AboutPage() {
             espacio donde cada detalle —textura, aroma y color— refleje{" "}
             <strong>equilibrio, elegancia y esencia natural.</strong>
           </p>
-
-          {/* Mini highlights (opcional, UX) */}
-          <div className="about-highlights" role="list" aria-label="Aurela highlights">
-            <span className="about-pill" role="listitem">
-              <Sparkles size={16} className="about-pill-icon" aria-hidden="true" />
-              Fine Dining Natural
-            </span>
-            <span className="about-pill" role="listitem">
-              <Leaf size={16} className="about-pill-icon" aria-hidden="true" />
-              Seasonal Ingredients
-            </span>
-            <span className="about-pill" role="listitem">
-              <Recycle size={16} className="about-pill-icon" aria-hidden="true" />
-              Sustainable Approach
-            </span>
-          </div>
         </div>
 
         {/* === VALUES GRID === */}
