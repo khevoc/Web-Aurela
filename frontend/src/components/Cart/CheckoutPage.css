@@ -1,4 +1,3 @@
-/* === AURELA Checkout Page — Natural Luxe Edition === */
 
 .checkout-section {
   min-height: 100vh;
@@ -160,6 +159,83 @@
   box-shadow: 0 0 20px rgba(163, 127, 44, 0.35);
   transform: scale(1.03);
 }
+
+/* ✅ Contenedor de acciones (WhatsApp + Pagar) */
+.checkout-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+/* Botón WhatsApp (manteniendo estética lujo) */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  width: 100%;
+
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #1fa855, #2cc46b);
+  color: #fffdf8;
+
+  border: 1px solid rgba(25, 120, 70, 0.25);
+  box-shadow: 0 10px 25px rgba(30, 140, 85, 0.18);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+  box-shadow: 0 14px 30px rgba(30, 140, 85, 0.25);
+}
+
+/* Ajuste: tu .btn-pay ya existe, solo quítale width:100% si lo tiene */
+.btn-pay {
+  width: 100%;
+  margin-top: 0; /* ✅ ya no lo necesitamos porque lo controla checkout-actions */
+}
+
+/* Responsive: en móvil, uno debajo del otro */
+@media (max-width: 768px) {
+  .checkout-actions {
+    grid-template-columns: 1fr;
+  }
+}
+.field-error {
+  margin: -0.4rem 0 0.9rem;
+  font-size: 0.85rem;
+  color: #b42318;
+  font-weight: 600;
+}
+
+.summary-error {
+  margin-top: 0.8rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(180, 35, 24, 0.08);
+  border: 1px solid rgba(180, 35, 24, 0.18);
+  color: #8a1f14;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.btn-whatsapp:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  filter: none;
+}
+
 
 /* === Responsive === */
 @media (max-width: 768px) {

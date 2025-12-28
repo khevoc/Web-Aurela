@@ -19,7 +19,7 @@ export default function ProductPage() {
   const dropdownRef = useRef(null);
   const itemsPerPage = 20;
 
-  // 🔹 Cerrar menús al hacer clic fuera
+  //  Cerrar menús al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -31,7 +31,7 @@ export default function ProductPage() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // 🔹 Cargar y parsear CSV (usa delimitador | y columnas en español)
+  //  Cargar y parsear CSV (usa delimitador | y columnas en español)
   useEffect(() => {
     Papa.parse("/data/menu.csv", {
       download: true,
@@ -53,7 +53,7 @@ export default function ProductPage() {
     });
   }, []);
 
-  // 🔹 Filtrado + orden
+  //  Filtrado + orden
   useEffect(() => {
     let data = products.filter((p) => {
       const matchSearch = p.name?.toLowerCase().includes(search.toLowerCase());
@@ -69,7 +69,7 @@ export default function ProductPage() {
     setPage(1);
   }, [search, selectedCategory, sortOrder, products]);
 
-  // 🔹 Actualizar productos visibles según página
+  //  Actualizar productos visibles según página
   useEffect(() => {
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
@@ -78,7 +78,7 @@ export default function ProductPage() {
 
   const uniqueCategories = ["Todos", ...new Set(products.map((p) => p.category))];
 
-  // 🔹 Agregar al carrito con animación
+  //  Agregar al carrito con animación
   const handleAddToCart = (product, e) => {
     addToCart(product);
 
@@ -134,7 +134,7 @@ export default function ProductPage() {
     <section className="product-section">
       <h1 className="product-title"> Carta </h1>
 
-      {/* 🔹 Barra de filtros */}
+      {/*  Barra de filtros */}
       <div className="filters-bar" ref={dropdownRef}>
         <div className="search-box">
           <input
@@ -220,7 +220,7 @@ export default function ProductPage() {
         </div>
       </div>
 
-      {/* 🔹 Grilla de productos */}
+      {/*  Grilla de productos */}
       <div className="product-grid">
         {displayed.map((product, i) => (
           <div key={i} className="product-card">
@@ -241,7 +241,7 @@ export default function ProductPage() {
         )}
       </div>
 
-      {/* 🔹 Paginación */}
+      {/*  Paginación */}
       {filteredData.length > itemsPerPage && (
         <div className="pagination">
           <button disabled={page === 1} onClick={handlePrev}>

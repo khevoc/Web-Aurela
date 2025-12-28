@@ -9,7 +9,7 @@ export default function CartPage() {
   const { cart, updateQuantity, removeFromCart, clearCart, total } = useCart();
   const { t } = useTranslation();
 
-  // ✅ Agrupar productos *idénticos* (mismo id, nombre, imagen, precio)
+  //  Agrupar productos *idénticos* (mismo id, nombre, imagen, precio)
   const groupedCart = useMemo(() => {
     const groups = {};
     for (const item of cart) {
@@ -23,7 +23,7 @@ export default function CartPage() {
     return Object.values(groups);
   }, [cart]);
 
-  // ✅ Calcular total del carrito (sin depender de key incorrecto)
+  //  Calcular total del carrito (sin depender de key incorrecto)
   const grandTotal = useMemo(() => {
     return groupedCart.reduce(
       (sum, item) => sum + item.price * item.quantity,
