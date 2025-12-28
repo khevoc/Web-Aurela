@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext.jsx";
 import { useTranslation } from "react-i18next";
 import "./Navbar.css";
+import { ShoppingCartIcon } from "lucide-react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,7 +53,7 @@ export default function Navbar() {
 
       <div className="nav-actions">
         <NavLink to="/cart" className="btn-cart">
-          🛒
+          <ShoppingCartIcon size={24} aria-hidden="true" />
           {totalItems > 0 && (
             <span className="cart-count">{totalItems}</span>
           )}

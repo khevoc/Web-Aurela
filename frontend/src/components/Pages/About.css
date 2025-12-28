@@ -152,6 +152,34 @@
   text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
+/* === Small premium highlight pills (optional) === */
+.about-highlights {
+  margin-top: 1.4rem;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: #e6e1d2;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(191, 166, 106, 0.25);
+  box-shadow: 0 0 18px rgba(191, 166, 106, 0.06);
+}
+
+.about-pill-icon {
+  color: #d4af37;
+}
+
+
 /* === ANIMATIONS === */
 @keyframes fadeInUp {
   from {
