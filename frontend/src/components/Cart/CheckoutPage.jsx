@@ -1,29 +1,31 @@
-import React, { useState, useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useCart } from "../../contexts/CartContext.jsx";
 import MaintenanceModal from "../../components/MaintenanceModal.jsx";
+import {
+  AlertCircle,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
+  CreditCard,
+  Leaf,
+  Mail,
+  MapPin,
+  MessageCircle,
+  User,
+} from "lucide-react";
 import "./CheckoutPage.css";
 
 export default function CheckoutPage() {
   const { cart, total } = useCart();
+
   const [showDetails, setShowDetails] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
   const [form, setForm] = useState({ name: "", email: "", address: "" });
 
-  //  errores para mostrar debajo de inputs y en WhatsApp
+  // Errores por campo + mensaje general visible
   const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((p) => ({ ...p, [name]: value }));
-
-    // limpia error en vivo
-    setErrors((prev) => {
-      if (!prev[name]) return prev;
-      const copy = { ...prev };
-      delete copy[name];
-      return copy;
-    });
-  };
+  const [banner, setBanner] = useState(null); // { type: "error"|"success", text: string }
 
   // Agrupar productos idénticos
   const groupedCart = useMemo(() => {
@@ -37,14 +39,58 @@ export default function CheckoutPage() {
     return Object.values(map);
   }, [cart]);
 
-  const WHATSAPP_PHONE = "51960354239"; // <-- tu número
+  const WHATSAPP_PHONE = "51960354239"; // <-- cambia aquí (sin +)
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm((p) => ({ ...p, [name]: value }));
+
+    // Limpia error del campo en vivo
+    setErrors((prev) => {
+      if (!prev[name]) return prev;
+      const copy = { ...prev };
+      delete copy[name];
+      return copy;
+    });
+
+    // limpia banner al empezar a corregir
+    if (banner?.type === "error") setBanner(null);
+  };
+
+  const validate = () => {
+    const next = {};
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const address = form.address.trim();
+
+    if (!name) next.name = "Por favor ingresa tu nombre para continuar.";
+    if (next.email && !/^\S+@\S+\.\S+$/.test(email)) next.email = "Por favor ingresa un correo electrónico válido.";
+
+    if (!address) next.address = "Por favor proporciona tu dirección de entrega.";
+
+    if (groupedCart.length === 0) next.cart = "Tu carrito está vacío. Por favor agrega al menos un artículo.";
+
+    setErrors(next);
+
+    const ok = Object.keys(next).length === 0;
+    if (!ok) {
+      // Mensaje general siempre visible
+      setBanner({
+        type: "error",
+        text:
+          "No pudimos enviar tu orden aún. Por favor revisa los campos resaltados y asegúrate de que tu carrito tenga artículos.",
+      });
+    }
+    return ok;
+  };
 
   const buildWhatsAppText = () => {
     const lines = [];
-    lines.push(" *Nueva orden - Aurela*");
+    lines.push(" *Aurela — Nueva Orden*");
     lines.push("");
-    lines.push(` *Cliente:* ${form.name}`);
-    lines.push(` *Dirección:* ${form.address}`);
+    lines.push(` *Cliente:* ${form.name.trim()}`);
+    lines.push(` *Dirección:* ${form.address.trim()}`);
     lines.push("");
     lines.push(" *Detalle:*");
 
@@ -53,49 +99,25 @@ export default function CheckoutPage() {
       const qty = Number(item.quantity || 1);
       const subtotal = unit * qty;
 
-      lines.push(`- ${item.name} x${qty}`);
-      lines.push(
-        `  Unit: S/ ${unit.toFixed(2)} | Subtotal: S/ ${subtotal.toFixed(2)}`
-      );
+      lines.push(`- ${item.name} × ${qty}`);
+      lines.push(` Unitario: S/ ${unit.toFixed(2)} | Subtotal: S/ ${subtotal.toFixed(2)}`);
     });
 
     lines.push("");
-    lines.push(`  *Total:* S/ ${Number(total).toFixed(2)}`);
-
+    lines.push(` *Total:* S/ ${Number(total).toFixed(2)}`);
+    lines.push("");
     return lines.join("\n");
   };
 
-  // Validación para WhatsApp (y te sirve también si luego validas "Pagar")
-  const validateForOrder = () => {
-    const nextErrors = {};
+  const handleWhatsApp = () => {
+    if (!validate()) return;
 
-    if (!form.name.trim()) nextErrors.name = "Ingresa tu nombre.";
-    if (form.email && !/^\S+@\S+\.\S+$/.test(form.email.trim()))
-      nextErrors.email = "Correo no válido.";
+    setBanner({
+      type: "success",
+      text: "Perfecto. Estamos abriendo WhatsApp con tu orden completa para confirmación.",
+    });
 
-    if (!form.address.trim()) nextErrors.address = "Ingresa tu dirección.";
-
-    // carrito con items
-    if (groupedCart.length === 0) nextErrors.cart = "Tu carrito está vacío.";
-
-    setErrors(nextErrors);
-    return Object.keys(nextErrors).length === 0;
-  };
-
-  // Click WhatsApp: valida y abre con window.open (no uses href fijo)
-  const handleWhatsAppClick = (e) => {
-    e.preventDefault();
-
-    if (!validateForOrder()) {
-      // opcional: te llevo al inicio del resumen para que veas el error
-      // window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
-    const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(
-      buildWhatsAppText()
-    )}`;
-
+    const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(buildWhatsAppText())}`;
     window.open(waUrl, "_blank", "noopener,noreferrer");
   };
 
@@ -104,57 +126,109 @@ export default function CheckoutPage() {
   return (
     <section className="checkout-section">
       <div className="checkout-container">
-        <h1 className="checkout-title">Checkout</h1>
+        <header className="checkout-header">
+          <div className="checkout-badge">
+            <Leaf size={16} />
+            <span>Aurela · Natural Luxury</span>
+          </div>
+          <h1 className="checkout-title">Checkout</h1>
+          <p className="checkout-subtitle">
+            Comparte tu orden instantáneamente vía WhatsApp, o procede al pago.
+          </p>
+        </header>
 
         <div className="checkout-content">
-          {/* 🧾 FORMULARIO */}
+          {/* 🧾 FORM */}
           <div className="checkout-form">
-            <h2>Información del cliente</h2>
+            <h2>Detalles del cliente</h2>
 
-            <form>
-              <label>
-                Nombre
+            <div className="form-field">
+              <label>Nombre</label>
+              <div className={`input-wrap ${errors.name ? "has-error" : ""}`}>
+                <User size={18} />
                 <input
                   type="text"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="John "
+                  placeholder="e.g., Juan "
+                  autoComplete="name"
                 />
-                {errors.name && <p className="field-error">{errors.name}</p>}
-              </label>
+              </div>
+              {errors.name && (
+                <p className="field-error">
+                  <AlertCircle size={16} /> {errors.name}
+                </p>
+              )}
+            </div>
 
-              <label>
-                Correo electrónico
+            <div className="form-field">
+              <label>Email</label>
+              <div className={`input-wrap ${errors.email ? "has-error" : ""}`}>
+                <Mail size={18} />
                 <input
                   type="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="john@email.com"
+                  placeholder="e.g., juan@email.com"
+                  autoComplete="email"
                 />
-                {errors.email && <p className="field-error">{errors.email}</p>}
-              </label>
+              </div>
+              {errors.email && (
+                <p className="field-error">
+                  <AlertCircle size={16} /> {errors.email}
+                </p>
+              )}
+            </div>
 
-              <label>
-                Dirección de envío
+            <div className="form-field">
+              <label>Dirección de entrega</label>
+              <div className={`input-wrap ${errors.address ? "has-error" : ""}`}>
+                <MapPin size={18} />
                 <input
                   type="text"
                   name="address"
                   value={form.address}
                   onChange={handleChange}
-                  placeholder="123 Ocean Drive"
+                  placeholder="e.g., Av. Example 123, Miraflores"
+                  autoComplete="street-address"
                 />
-                {errors.address && (
-                  <p className="field-error">{errors.address}</p>
-                )}
-              </label>
-            </form>
+              </div>
+              {errors.address && (
+                <p className="field-error">
+                  <AlertCircle size={16} /> {errors.address}
+                </p>
+              )}
+            </div>
+
+            <div className="form-note">
+              <AlertCircle size={16} />
+              <span>
+                Tus datos son usados únicamente para preparar y confirmar tu orden.
+              </span>
+            </div>
           </div>
 
-          {/*  RESUMEN */}
+          {/* 💰 SUMMARY */}
           <div className="checkout-summary">
             <h2>Resumen de la orden</h2>
+
+            {/* ✅ Banner visible */}
+            {banner && (
+              <div className={`summary-banner ${banner.type}`}>
+                {banner.type === "error" ? <AlertCircle size={18} /> : <CheckCircle2 size={18} />}
+                <p>{banner.text}</p>
+              </div>
+            )}
+
+            {/* ✅ error cart visible incluso sin banner */}
+            {errors.cart && (
+              <div className="summary-banner error">
+                <AlertCircle size={18} />
+                <p>{errors.cart}</p>
+              </div>
+            )}
 
             <div className="summary-top">
               <p className="summary-total">
@@ -166,31 +240,31 @@ export default function CheckoutPage() {
                 className="btn-toggle"
                 onClick={() => setShowDetails((v) => !v)}
               >
-                {showDetails ? "Ocultar detalles" : "Ver detalles"}
+                {showDetails ? (
+                  <>
+                    Ocultar detalles <ChevronUp size={18} />
+                  </>
+                ) : (
+                  <>
+                    Ver detalles <ChevronDown size={18} />
+                  </>
+                )}
               </button>
             </div>
-
-            {/*  error de carrito */}
-            {errors.cart && <p className="summary-error">{errors.cart}</p>}
 
             {showDetails && (
               <ul className="summary-list">
                 {groupedCart.map((item, index) => (
                   <li key={index} className="summary-item">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="summary-thumb"
-                    />
+                    <img src={item.image} alt={item.name} className="summary-thumb" />
                     <div className="summary-info">
                       <p className="summary-name">{item.name}</p>
-                      <p className="summary-qty">Cantidad: {item.quantity}</p>
-                      <p className="summary-unit">
-                        Precio unitario: S/ {Number(item.price).toFixed(2)}
-                      </p>
+                      <div className="summary-meta">
+                        <span>Cantidad: {item.quantity}</span>
+                        <span>Unitario: S/ {Number(item.price).toFixed(2)}</span>
+                      </div>
                       <p className="summary-subtotal">
-                        Subtotal: S/{" "}
-                        {Number(item.price * item.quantity).toFixed(2)}
+                        Subtotal: S/ {Number(item.price * item.quantity).toFixed(2)}
                       </p>
                     </div>
                   </li>
@@ -198,16 +272,17 @@ export default function CheckoutPage() {
               </ul>
             )}
 
-            {/*  Acciones: WhatsApp + Pagar */}
+            {/* Actions */}
             <div className="checkout-actions">
               <button
                 type="button"
                 className="btn-whatsapp"
-                onClick={handleWhatsAppClick}
+                onClick={handleWhatsApp}
                 disabled={isCartEmpty}
-                title={isCartEmpty ? "Tu carrito está vacío" : "Enviar por WhatsApp"}
+                title={isCartEmpty ? "Add items to your cart first" : "Send order via WhatsApp"}
               >
-                WhatsApp
+                <MessageCircle size={18} />
+                Orden WhatsApp
               </button>
 
               <button
@@ -215,9 +290,14 @@ export default function CheckoutPage() {
                 className="btn-pay"
                 onClick={() => setShowModal(true)}
               >
+                <CreditCard size={18} />
                 Pagar
               </button>
             </div>
+
+            <p className="summary-footnote">
+              Al realizar tu pedido, aceptas que Aurela te contacte para confirmar disponibilidad.
+            </p>
           </div>
         </div>
       </div>
