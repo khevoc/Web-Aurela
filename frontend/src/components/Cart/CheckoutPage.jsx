@@ -129,7 +129,7 @@ export default function CheckoutPage() {
         <header className="checkout-header">
           <div className="checkout-badge">
             <Leaf size={16} />
-            <span>Aurela · Natural Luxury</span>
+            <span>Aurela</span>
           </div>
           <h1 className="checkout-title">Checkout</h1>
           <p className="checkout-subtitle">
