@@ -376,12 +376,14 @@
 }
 
 .clear-btn:hover {
+  border-radius: 50%;
   color: #a37f2c;
   background: rgba(255, 250, 242, 0.9);
   box-shadow: 0 0 10px rgba(163, 127, 44, 0.18);
 }
 
 .btn-reset {
+  border-radius: 50%;
   width: 42px;
   height: 42px;
   color: #5b4f28;
