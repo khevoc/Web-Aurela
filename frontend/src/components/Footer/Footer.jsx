@@ -54,8 +54,8 @@ export default function Footer() {
 
           <div className="footer-line">
             <Phone size={16} className="footer-ico" />
-            <a className="footer-link" href="tel:+51999555123">
-              +51 999 555 123
+            <a className="footer-link" href="tel:+51999999999">
+              +51 999 999 999
             </a>
           </div>
 
