@@ -36,7 +36,6 @@ export default function Footer() {
         {/* Left / Brand */}
         <div className="footer-brand">
           <img src={logo} alt="Aurela" className="footer-logo" />
-          <p className="footer-signature">Aurela Restaurant</p>
         </div>
 
         {/* Middle / Details */}
