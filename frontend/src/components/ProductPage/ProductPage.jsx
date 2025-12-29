@@ -3,6 +3,7 @@ import Papa from "papaparse";
 import { useCart } from "../../contexts/CartContext.jsx";
 import "./ProductPage.css";
 import { t } from "i18next";
+import { X, RotateCcw } from "lucide-react";
 
 export default function ProductPage() {
   const [products, setProducts] = useState([]);
@@ -18,6 +19,20 @@ export default function ProductPage() {
   const { addToCart } = useCart();
   const dropdownRef = useRef(null);
   const itemsPerPage = 20;
+
+  // ✅ Limpiar TODO (búsqueda + filtros)
+  const handleClearAll = () => {
+    setSearch("");
+    setSelectedCategory("Todos");
+    setSortOrder(null);
+    setShowCategories(false);
+    setShowSortMenu(false);
+    setPage(1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const hasActiveFilters =
+    search.trim().length > 0 || selectedCategory !== "Todos" || !!sortOrder;
 
   //  Cerrar menús al hacer clic fuera
   useEffect(() => {
@@ -139,14 +154,22 @@ export default function ProductPage() {
         <div className="search-box">
           <input
             type="text"
-            placeholder= "Buscar productos..."
+            placeholder="Buscar productos..."
             className="search-input"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
+
+          {/* ✅ limpiar búsqueda con icono */}
           {search && (
-            <button className="clear-btn" onClick={() => setSearch("")}>
-              ✕
+            <button
+              className="clear-btn"
+              onClick={() => setSearch("")}
+              type="button"
+              aria-label="Limpiar búsqueda"
+              title="Limpiar búsqueda"
+            >
+              <X size={16} />
             </button>
           )}
         </div>
@@ -160,9 +183,11 @@ export default function ProductPage() {
                 setShowCategories(!showCategories);
                 setShowSortMenu(false);
               }}
+              type="button"
             >
               {selectedCategory}
             </button>
+
             {showCategories && (
               <div className="dropdown-menu">
                 {uniqueCategories.map((cat, i) => (
@@ -175,6 +200,7 @@ export default function ProductPage() {
                       setSelectedCategory(cat);
                       setShowCategories(false);
                     }}
+                    type="button"
                   >
                     {cat}
                   </button>
@@ -191,32 +217,47 @@ export default function ProductPage() {
                 setShowSortMenu(!showSortMenu);
                 setShowCategories(false);
               }}
+              type="button"
             >
               Ordenar por:
             </button>
+
             {showSortMenu && (
               <div className="dropdown-menu">
                 <button
-                  className="dropdown-item"
+                  className={`dropdown-item ${sortOrder === "asc" ? "active" : ""}`}
                   onClick={() => {
                     setSortOrder("asc");
                     setShowSortMenu(false);
                   }}
+                  type="button"
                 >
                   Precio: menor a mayor
                 </button>
                 <button
-                  className="dropdown-item"
+                  className={`dropdown-item ${sortOrder === "desc" ? "active" : ""}`}
                   onClick={() => {
                     setSortOrder("desc");
                     setShowSortMenu(false);
                   }}
+                  type="button"
                 >
                   Precio: mayor a menor
                 </button>
               </div>
             )}
           </div>
+
+          {/* ✅ limpiar filtros + búsqueda */}
+          <button
+            className={`btn-reset ${hasActiveFilters ? "active" : ""}`}
+            onClick={handleClearAll}
+            type="button"
+            aria-label="Limpiar filtros y búsqueda"
+            title="Limpiar filtros y búsqueda"
+          >
+            <RotateCcw size={16} />
+          </button>
         </div>
       </div>
 
@@ -236,6 +277,7 @@ export default function ProductPage() {
             </button>
           </div>
         ))}
+
         {displayed.length === 0 && (
           <p className="no-results">{t("product.noResults")}</p>
         )}
@@ -244,7 +286,7 @@ export default function ProductPage() {
       {/*  Paginación */}
       {filteredData.length > itemsPerPage && (
         <div className="pagination">
-          <button disabled={page === 1} onClick={handlePrev}>
+          <button disabled={page === 1} onClick={handlePrev} type="button">
             ⟨ {t("product.prev")}
           </button>
           <span>
@@ -254,6 +296,7 @@ export default function ProductPage() {
           <button
             disabled={page >= Math.ceil(filteredData.length / itemsPerPage)}
             onClick={handleNext}
+            type="button"
           >
             {t("product.next")} ⟩
           </button>
