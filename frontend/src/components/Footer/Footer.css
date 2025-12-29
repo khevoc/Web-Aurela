@@ -1,85 +1,165 @@
 .footer {
   width: 100%;
-  background: #f4ede4;
-  border-top: 1px solid rgba(201, 168, 106, 0.4);
-  padding: 1.5rem 2rem;
+  background: linear-gradient(180deg, #f4ede4 0%, #f7f3ec 100%);
+  border-top: 1px solid rgba(201, 168, 106, 0.35);
+  padding: 1.6rem 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
   position: relative;
   z-index: 10;
   overflow: hidden;
 }
 
-.footer-logo {
-  width: 120px;
-  height: auto;
-  margin-bottom: 0.5rem;
-}
-
-/* Línea decorativa superior */
-.footer::before {
+/* Glow sutil y elegante (sin movimiento) */
+.footer::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: -50%;
-  width: 200%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(201, 168, 106, 0.6),
-    rgba(138, 167, 139, 0.6),
-    transparent
+  inset: -40%;
+  background: radial-gradient(
+    circle at 20% 10%,
+    rgba(201, 168, 106, 0.18),
+    transparent 55%
   );
-  animation: moveLight 6s linear infinite;
-}
-
-@keyframes moveLight {
-  0% {
-    transform: translateX(-25%);
-  }
-  100% {
-    transform: translateX(25%);
-  }
+  pointer-events: none;
+  z-index: 0;
 }
 
 .footer-inner {
   width: 100%;
   max-width: 1200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr 0.9fr;
   gap: 1.5rem;
-  flex-wrap: wrap;
+  align-items: start;
+  position: relative;
+  z-index: 1;
 }
 
-.footer p {
+/* Brand */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footer-logo {
+  width: 125px;
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.08));
+}
+
+.footer-tagline {
   font-family: "Montserrat", sans-serif;
-  color: #2e2e2e;
-  font-size: 0.9rem;
-  text-align: center;
-  letter-spacing: 0.5px;
+  font-size: 0.88rem;
+  color: rgba(46, 46, 46, 0.75);
+  letter-spacing: 0.2px;
+}
+
+/* Info block */
+.footer-info {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(138, 167, 139, 0.25);
+  border-radius: 16px;
+  padding: 1rem 1.05rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+.footer-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.45rem 0;
+}
+
+.footer-ico {
+  color: #8aa78b;
+  margin-top: 2px;
+}
+
+.footer-link {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(46, 46, 46, 0.9);
+  text-decoration: none;
+  line-height: 1.35;
+  transition: color 0.25s ease;
+}
+
+.footer-link:hover {
+  color: #c9a86a;
+}
+
+.footer-muted {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(46, 46, 46, 0.7);
+  line-height: 1.35;
+}
+
+/* Right side */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.9rem;
+}
+
+.footer-copy {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(46, 46, 46, 0.8);
+  font-size: 0.88rem;
+  text-align: right;
+  letter-spacing: 0.2px;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
 }
 
 .social-icons a {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(201, 168, 106, 0.22);
   color: #8aa78b;
-  transition: all 0.3s ease;
-  font-size: 1.3rem;
-  margin: 0 0.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease,
+    background 0.25s ease, border-color 0.25s ease;
 }
 
 .social-icons a:hover {
   color: #c9a86a;
-  transform: scale(1.15);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(201, 168, 106, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(201, 168, 106, 0.18);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .footer-inner {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+  .footer-brand {
+    align-items: center;
+  }
+
+  .footer-copy {
+    text-align: left;
+  }
+}
+@media (max-width: 500px) {
+  .footer-logo {
+    width: 110px;
   }
 }
