@@ -15,72 +15,97 @@ import logo from "../../assets/logo_footer-2.png";
 export default function Footer() {
   const { t } = useTranslation();
 
-  // ✅ Configura esto (y si quieres, pásalo a variables de entorno)
+  // ✅ Ajusta datos reales
   const WHATSAPP_PHONE = "51960354239"; // sin "+" y sin espacios
   const ADDRESS_TEXT = "Av. Vasco Núñez de Balboa 741, Miraflores 15074";
-  const GOOGLE_MAPS_URL =
+  const PHONE_TEXT = "+51 999 999 999";
+  const EMAIL = "reservas@aurela.com";
+  const HOURS = "Mon–Sun · 12:00 — 23:00";
+
+  const mapsUrl =
     "https://www.google.com/maps/search/?api=1&query=" +
     encodeURIComponent(ADDRESS_TEXT);
 
   const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(
-    "Hola Aurela 👋, quiero hacer una consulta / reserva."
+    "Hello Aurela 👋 I’d like to book a table / ask about the menu."
   )}`;
 
   return (
     <footer className="footer">
-      <div className="footer-inner">
-        {/* Brand */}
+      <div className="footer-shell">
+        {/* Left / Brand */}
         <div className="footer-brand">
-          <img src={logo} alt="Aurela Logo" className="footer-logo" />
-          <p className="footer-tagline">
-            Cocina natural · Arte culinario · Experiencia premium
-          </p>
+          <img src={logo} alt="Aurela" className="footer-logo" />
+          <p className="footer-signature">Aurela Restaurant</p>
         </div>
 
-        {/* Info */}
-        <div className="footer-info">
-          <div className="footer-line">
-            <MapPin size={16} className="footer-ico" />
-            <a
-              className="footer-link"
-              href={GOOGLE_MAPS_URL}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Open location on Google Maps"
-            >
-              {ADDRESS_TEXT}
-            </a>
+        {/* Middle / Details */}
+        <div className="footer-panel" role="contentinfo" aria-label="Contact info">
+          <div className="panel-row">
+            <MapPin size={16} className="panel-ico" />
+            <div className="panel-text">
+              <span className="panel-label">Location</span>
+              <a className="panel-link" href={mapsUrl} target="_blank" rel="noreferrer">
+                {ADDRESS_TEXT}
+              </a>
+            </div>
           </div>
 
-          <div className="footer-line">
-            <Phone size={16} className="footer-ico" />
-            <a className="footer-link" href="tel:+51999999999">
-              +51 999 999 999
-            </a>
+          <div className="panel-row">
+            <Phone size={16} className="panel-ico" />
+            <div className="panel-text">
+              <span className="panel-label">Phone</span>
+              <a className="panel-link" href="tel:+51999999999">
+                {PHONE_TEXT}
+              </a>
+            </div>
           </div>
 
-          <div className="footer-line">
-            <Clock size={16} className="footer-ico" />
-            <span className="footer-muted">Lun–Dom: 12:00 – 23:00</span>
-          </div>          
+          <div className="panel-row">
+            <Mail size={16} className="panel-ico" />
+            <div className="panel-text">
+              <span className="panel-label">Email</span>
+              <a className="panel-link" href={`mailto:${EMAIL}`}>
+                {EMAIL}
+              </a>
+            </div>
+          </div>
+
+          <div className="panel-row">
+            <Clock size={16} className="panel-ico" />
+            <div className="panel-text">
+              <span className="panel-label">Hours</span>
+              <span className="panel-muted">{HOURS}</span>
+            </div>
+          </div>
         </div>
 
-        {/* Right */}
+        {/* Right / Social + copy */}
         <div className="footer-right">
-          <div className="social-icons" aria-label="Social links">
-            <a href={waUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp Chat">
-              <MessageCircle />
+          <div className="footer-actions">
+            <a className="btn-pill" href={waUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp Chat">
+              <MessageCircle size={18} />
+              <span>Chat / Reservations</span>
             </a>
-            <a href="#" aria-label="Instagram">
-              <Instagram />
-            </a>
-            <a href="#" aria-label="Facebook">
-              <Facebook />
-            </a>
-            <a href="mailto:reservas@aurela.com" aria-label="Email">
-              <Mail />
-            </a>
-          </div>          
+
+            <div className="social-icons" aria-label="Social links">
+              <a href="#" aria-label="Instagram">
+                <Instagram size={18} />
+              </a>
+              <a href="#" aria-label="Facebook">
+                <Facebook size={18} />
+              </a>
+              <a href={`mailto:${EMAIL}`} aria-label="Email">
+                <Mail size={18} />
+              </a>
+            </div>
+          </div>
+
+          <div className="footer-divider" />
+
+          <p className="footer-copy">
+            © {new Date().getFullYear()} Aurela Restaurant. {t("footer.rights")}
+          </p>
         </div>
       </div>
     </footer>
