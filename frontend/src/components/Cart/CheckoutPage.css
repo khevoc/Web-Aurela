@@ -273,7 +273,6 @@
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  margin: 0.5rem 0 0;
   font-size: 0.88rem;
   color: #8a1f14;
   font-weight: 650;
@@ -392,7 +391,6 @@
   }
 }
 .field-error {
-  margin: -0.4rem 0 0.9rem;
   font-size: 0.85rem;
   color: #b42318;
   font-weight: 600;
@@ -435,6 +433,10 @@
 
   .btn-pay {
     font-size: 0.95rem;
+  }
+
+  .checkout-form label {
+    margin-bottom: 0.3rem;
   }
 }
 
