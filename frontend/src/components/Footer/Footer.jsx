@@ -20,7 +20,7 @@ export default function Footer() {
   const ADDRESS_TEXT = "Av. Vasco Núñez de Balboa 741, Miraflores 15074";
   const PHONE_TEXT = "+51 999 999 999";
   const EMAIL = "reservas@aurela.com";
-  const HOURS = "Mon–Sun · 12:00 — 23:00";
+  const HOURS = "Lun–Dom · 12:00 — 23:00";
 
   const mapsUrl =
     "https://www.google.com/maps/search/?api=1&query=" +
@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="panel-row">
             <MapPin size={16} className="panel-ico" />
             <div className="panel-text">
-              <span className="panel-label">Location</span>
+              <span className="panel-label">Ubicación</span>
               <a className="panel-link" href={mapsUrl} target="_blank" rel="noreferrer">
                 {ADDRESS_TEXT}
               </a>
@@ -53,7 +53,7 @@ export default function Footer() {
           <div className="panel-row">
             <Phone size={16} className="panel-ico" />
             <div className="panel-text">
-              <span className="panel-label">Phone</span>
+              <span className="panel-label">Teléfono</span>
               <a className="panel-link" href="tel:+51999999999">
                 {PHONE_TEXT}
               </a>
@@ -73,7 +73,7 @@ export default function Footer() {
           <div className="panel-row">
             <Clock size={16} className="panel-ico" />
             <div className="panel-text">
-              <span className="panel-label">Hours</span>
+              <span className="panel-label">Horario</span>
               <span className="panel-muted">{HOURS}</span>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function Footer() {
           <div className="footer-actions">
             <a className="btn-pill" href={waUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp Chat">
               <MessageCircle size={18} />
-              <span>Chat / Reservations</span>
+              <span>Chat / Reservaciones</span>
             </a>
 
             <div className="social-icons" aria-label="Social links">
