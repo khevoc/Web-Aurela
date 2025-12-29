@@ -316,7 +316,6 @@
 /* === Responsive === */
 @media (max-width: 768px) {
   .filters-bar {
-    flex-direction: column;
     gap: 1rem;
   }
 

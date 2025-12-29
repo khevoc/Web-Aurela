@@ -219,7 +219,7 @@ export default function ProductPage() {
               }}
               type="button"
             >
-              Ordenar por:
+              Orden:
             </button>
 
             {showSortMenu && (
